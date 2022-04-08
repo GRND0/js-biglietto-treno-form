@@ -1,44 +1,69 @@
 
-
-
 const pulsanteInvio = document.getElementById("pulsante-invio");
 console.log(pulsanteInvio);
 pulsanteInvio.addEventListener("click",
     function () {
         //input dati utente
-        const nomeCognome = document.getElementById("nome-cognome");
-        const kilometri = document.getElementById("kilometri");
-        const age = document.getElementById("age");
-        const prezzoKilometrico = 0.21;
-        const scontoAnziani = 40;
-        const scontoMinori = 20;
-        let prezzoIntero = Number(kilometri) * prezzoKilometrico;
+        const nomeCognome = document.getElementById("nome-cognome").value ;
+        const kilometri = document.getElementById("kilometri").value ;
+        const age = document.getElementById("age").value ;
+        const prezzoKilometrico = 0.21 ;
+        const scontoAnziani = 40 ;
+        const scontoMinori = 20 ;
+        let prezzoIntero = Number(kilometri) * prezzoKilometrico ;
 
         //calcolo dati
         //formule di calcolo degli sconti
         let scontoDaUsare = 0;
 
-        if (age = maggiorenne) {
+        if (age == "anziani") {
             scontoDaUsare = scontoAnziani;
         }
-        if (age = minorenne) {
+        if (age == "minorenne") {
             scontoDaUsare = scontoMinori;
         }
 
         //calcolo del prezzo finale
         let prezzoFinale = prezzoIntero - ((scontoDaUsare / 100) * prezzoIntero);
-        console.log(typeof (prezzoFinale));
+
 
         //arrotondamento prezzo finale
         let prezzoFormattato = prezzoFinale.toFixed(2);
 
+     
+        function getRandom() {
+            // Genera numeri random tra 1 e 16
+            return Math.floor((Math.random()*15)+1);
+        }
+
+        function getRandom1() {
+            // Genera numeri random tra 1 e 16
+            return Math.floor((Math.random()*9999)+1);
+        }
+        
+        let nomeOfferta = ""
+        
+        if (age == "minorenne") {
+            nomeOfferta = "Young"
+        }
+        if (age == "maggiorenne") {
+            nomeOfferta = "Biglietto standard"
+        }
+        if (age == "anziani") {
+            nomeOfferta = "Silver"
+        }
+
+
+
+
+
         //output
         document.getElementById("costo").innerHTML = prezzoFormattato + " €";
+        document.getElementById("offerta").innerHTML = nomeOfferta ;
+        document.getElementById("output-anagrafica").innerHTML = nomeCognome ;
+        document.getElementById("carrozza").innerHTML = getRandom() ;
+        document.getElementById("codice-cp").innerHTML = "2" + getRandom1() ;
 
 
-        /* //output dati nel form a comparsa
-         const outputAnagrafica = document.getElementById("output-anagrafica");
-         outputAnagrafica.innerHTML = `${nomeCognome}`;
-         const*/
     }
 )
