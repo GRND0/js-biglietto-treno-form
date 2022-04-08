@@ -1,34 +1,44 @@
-//input dei dati
-let kilometri = prompt ("Inserire kilometraggio")  ;
-document.getElementById ("distanza").innerHTML = kilometri  +  " Km" ;
-let age = prompt ("Inserire età viaggiatore") ;
-document.getElementById("anni").innerHTML = age + " anni" ;
 
-//costanti
-const prezzoKilometrico = 0.21 ;
-const scontoAnziani = 40 ;
-const scontoMinori = 20 ;
 
-//calcolo del prezzo senza riduzioni
-let prezzoIntero = Number (kilometri) * prezzoKilometrico ;
-console.log( typeof (prezzoIntero)) ;
 
-//formule di calcolo degli sconti
-let scontoDaUsare = 0 ;
+const pulsanteInvio = document.getElementById("pulsante-invio");
+console.log(pulsanteInvio);
+pulsanteInvio.addEventListener("click",
+    function () {
+        //input dati utente
+        const nomeCognome = document.getElementById("nome-cognome");
+        const kilometri = document.getElementById("kilometri");
+        const age = document.getElementById("age");
+        const prezzoKilometrico = 0.21;
+        const scontoAnziani = 40;
+        const scontoMinori = 20;
+        let prezzoIntero = Number(kilometri) * prezzoKilometrico;
 
-if (age > 65) {
-    scontoDaUsare = scontoAnziani ;
-}
-if (age < 18 ) {
-    scontoDaUsare = scontoMinori ;
-}
+        //calcolo dati
+        //formule di calcolo degli sconti
+        let scontoDaUsare = 0;
 
-//calcolo del prezzo finale
-let prezzoFinale = prezzoIntero - ((scontoDaUsare / 100 ) * prezzoIntero ) ;
-console.log( typeof (prezzoFinale)) ;
+        if (age = maggiorenne) {
+            scontoDaUsare = scontoAnziani;
+        }
+        if (age = minorenne) {
+            scontoDaUsare = scontoMinori;
+        }
 
-//arrotondamento prezzo finale
-let prezzoFormattato = prezzoFinale.toFixed(2) ;
+        //calcolo del prezzo finale
+        let prezzoFinale = prezzoIntero - ((scontoDaUsare / 100) * prezzoIntero);
+        console.log(typeof (prezzoFinale));
 
-//output
-document.getElementById ("costo-finale").innerHTML = prezzoFormattato +  " €" ;
+        //arrotondamento prezzo finale
+        let prezzoFormattato = prezzoFinale.toFixed(2);
+
+        //output
+        document.getElementById("costo").innerHTML = prezzoFormattato + " €";
+
+
+        /* //output dati nel form a comparsa
+         const outputAnagrafica = document.getElementById("output-anagrafica");
+         outputAnagrafica.innerHTML = `${nomeCognome}`;
+         const*/
+    }
+)

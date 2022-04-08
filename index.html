@@ -13,16 +13,36 @@
 </head>
 
 <body>
-    <div class="container position-absolute top-50 start-50 translate-middle text-center bg-success p-2 bg-opacity-25 rounded-3 ">
-        <h1 class="my-4">CALCOLA IL COSTO DEL TUO VIAGGIO</h1>
-        <h2>Kilometri da percorrere</h2>
-        <h2 class="mb-4" id="distanza"></h2>
-        <h2>La tua età</h2>
-        <h2 class="mb-4" id="anni"></h2>
-        <h2>Il costo del tuo biglietto :</h2>
-        <h2 class="mb-4" id="costo-finale"></h2>
-        <script src="script/script.js"></script>
+    <label for="nome-cognome">Nome e Cognome Passeggero</label>
+
+    <input type="text" id="nome-cognome" name="nome-cognome">
+    <label for="kilometri">Kilometri da percorrere</label>
+
+    <input type="text" id="kilometri" name="kilometri">
+
+    <label for="age">Fascia d'età</label>
+
+    <select name="age" id="age">
+        <option value="">Seleziona fascia d'età</option>
+        <option value="minorenne">Minorenne</option>
+        <option value="maggiorenne">Maggiorenne</option>
+
+    </select>
+
+    <button id="pulsante-invio">Genera</button>
+
+    <div>
+        <h4 id="output-anagrafica" >s</h4>
+        <span id="offerta" ></span>
+        <span id="carrozza" ></span>
+        <span id="codice-cp" ></span>
+        <span id="costo" ></span>
     </div>
+
+
+    <script src="script/script.js"></script>
+
+
 </body>
 
 </html>
