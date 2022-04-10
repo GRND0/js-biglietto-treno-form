@@ -13,32 +13,48 @@
 </head>
 
 <body>
-    <label for="nome-cognome">Nome e Cognome Passeggero</label>
+    <h2 class="text-center text-white mb-4">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h2>
+    <div class="container bg-white mb-4">
+        <div class="row">
+            <div class="col-4">
+                <label for="nome-cognome">Nome e Cognome Passeggero</label>
+                <input type="text" id="nome-cognome" name="nome-cognome">
+            </div>
+            <div class="col-4">
+                <label for="kilometri">Kilometri da percorrere</label>
+                <input type="text" id="kilometri" name="kilometri">
+            </div>
+            <div class="col-4">
+                <label for="age">Fascia d'età</label>
+                <select name="age" id="age">
+                    <option value="default">Seleziona fascia d'età</option>
+                    <option value="minorenne">Minorenne</option>
+                    <option value="maggiorenne">Maggiorenne</option>
+                    <option value="anziani">Over 65</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button id="pulsante-invio">Genera</button>
+                <button id="pulsante-azzera">Annulla</button>
+            </div>
+        </div>
+    </div>
 
-    <input type="text" id="nome-cognome" name="nome-cognome">
-    <label for="kilometri">Kilometri da percorrere</label>
 
-    <input type="text" id="kilometri" name="kilometri">
-
-    <label for="age">Fascia d'età</label>
-
-    <select name="age" id="age">
-        <option value="">Seleziona fascia d'età</option>
-        <option value="minorenne">Minorenne</option>
-        <option value="maggiorenne">Maggiorenne</option>
-        <option value="anziani">Over 65</option>
-
-
-    </select>
-
-    <button id="pulsante-invio">Genera</button>
-
-    <div>
-        <h4 id="output-anagrafica" ></h4>
-        <span id="offerta" ></span>
-        <span id="carrozza" ></span>
-        <span id="codice-cp" ></span>
-        <span id="costo" ></span>
+    <div id="campo-output" class="container d-none">
+        <h2 class="text-center">IL TUO BIGLIETTO</h2>
+        <h4>NOME PASSEGGERO</h4>
+        <h4 id="output-anagrafica"></h4>
+        <h4>Offerta</h4>
+        <span id="offerta"></span>
+        <h4>Carrozza</h4>
+        <span id="carrozza"></span>
+        <h4>Codice CP</h4>
+        <span id="codice-cp"></span>
+        <h4>Costo</h4>
+        <span id="costo"></span>
     </div>
 
 
